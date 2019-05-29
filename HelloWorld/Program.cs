@@ -47,10 +47,16 @@ namespace HelloWorld
 
         }
 
-        static string TryAgain()
+        static string TryAgain(string value)
         {
-            Console.WriteLine("You did not enter anything, Please try again.");
-            return Console.ReadLine();
+            if (value == " ")
+            {
+                Console.WriteLine("You did not enter anything, Please try again.");
+                value = Console.ReadLine();
+            }
+
+            return value;
+
         }
     }
 }
