@@ -12,10 +12,10 @@ namespace HelloWorld
             //School Tracker
             var studentGrades = new int[10] {80, 77, 45, 87, 53, 43, 67, 34, 23, 76};
 
-            for (int i = 0; i < 10; i++)
+            //foreach loop
+            foreach (var i in studentGrades)
             {
-                var ctStudent = i + 1;
-                Console.WriteLine("Student {0}'s Grade is {1}", ctStudent.ToString(), studentGrades[i].ToString());
+                Console.WriteLine("The Student grade is {0}", i.ToString());
             }
             
         }
