@@ -8,16 +8,49 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             
-            //Arrays
-            //School Tracker
-            var studentGrades = new int[10] {80, 77, 45, 87, 53, 43, 67, 34, 23, 76};
-
-            //foreach loop
-            foreach (var i in studentGrades)
+            Console.WriteLine("What is your name?");
+            var strName = Console.ReadLine();
+            if (strName == "")
             {
-                Console.WriteLine("The Student grade is {0}", i.ToString());
+                strName = TryAgain();
+            }
+            Console.WriteLine("How old are you?");
+            var strAge = Console.ReadLine();
+            if (strAge == "")
+            {
+                strAge = TryAgain();
+            }
+            Console.WriteLine("What is your birth month?");
+            var strMonth = Console.ReadLine();
+            if (strMonth == "")
+            {
+                strMonth = TryAgain();
             }
             
+            Console.Write("Client Name: {0} \n" +
+                          "Client Age: {1} \n" +
+                          "Client Birth Month: {2} \n" 
+                ,strName, strAge, strMonth);
+
+            switch (strMonth)
+            {
+                case "March":
+                    Console.WriteLine("You are an Aries");
+                    break;
+                case "April":
+                    Console.WriteLine("You are a Taurus.");
+                    break;
+                default:
+                    Console.WriteLine("We Dont know your sign.");
+                    break;
+            }
+
+        }
+
+        static string TryAgain()
+        {
+            Console.WriteLine("You did not enter anything, Please try again.");
+            return Console.ReadLine();
         }
     }
 }
