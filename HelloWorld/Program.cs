@@ -8,55 +8,45 @@ namespace HelloWorld
         static void Main(string[] args)
         {
             
-            Console.WriteLine("What is your name?");
-            var strName = Console.ReadLine();
-            if (strName == "")
-            {
-                strName = TryAgain();
-            }
-            Console.WriteLine("How old are you?");
-            var strAge = Console.ReadLine();
-            if (strAge == "")
-            {
-                strAge = TryAgain();
-            }
-            Console.WriteLine("What is your birth month?");
-            var strMonth = Console.ReadLine();
-            if (strMonth == "")
-            {
-                strMonth = TryAgain();
-            }
+            //Get Student's Name
+            var strName = AskQuestion("What is your name");
+            Console.WriteLine("Your name is {0}.", strName);
             
-            Console.Write("Client Name: {0} \n" +
-                          "Client Age: {1} \n" +
-                          "Client Birth Month: {2} \n" 
-                ,strName, strAge, strMonth);
+            //Get Student's Age
+            var strAge = AskQuestion("What is your age");
+            
+            //Get Student's Birth Month
+            var strMonth = AskQuestion("What is your birth month");
 
-            switch (strMonth)
-            {
-                case "March":
-                    Console.WriteLine("You are an Aries");
-                    break;
-                case "April":
-                    Console.WriteLine("You are a Taurus.");
-                    break;
-                default:
-                    Console.WriteLine("We Dont know your sign.");
-                    break;
-            }
+            var strGrade = AskQuestion("What is your grade");
+            
+            //Display the information
+            DisplayStudent(strName.ToString(), strAge.ToString(), strMonth.ToString(), strGrade.ToString());
 
         }
 
-        static string TryAgain(string value)
+        static string AskQuestion(string question)
         {
-            if (value == " ")
+            var value = "";
+            while (value == "")
             {
-                Console.WriteLine("You did not enter anything, Please try again.");
+                Console.WriteLine(question);
                 value = Console.ReadLine();
+                if (value == "")
+                {
+                    Console.WriteLine("You must enter a value...");
+                }
             }
 
             return value;
+        }
 
+        static void DisplayStudent(string name, string age, string month, string grade)
+        {
+            string displayText = "--------\n STUDENT INFORMATION\n--------\nStudent Name: {0} \nStudent Age: {1} \nStudent Birth Month: {2} \n" +
+                                 "Student Grade: {3}";
+            Console.WriteLine(displayText, name, age, month, grade);
+            
         }
     }
 }
