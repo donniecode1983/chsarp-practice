@@ -16,15 +16,33 @@ namespace HelloWorld
             // Create a list of type student
             var students = new List<Student>();
             var adding = true;
-            var moreStudents = 'N';
+            var studentCount = 0;
             while (adding)
-            {
-                moreStudents = Console.ReadLine().ToUpper();
-                if (moreStudents != 'Y')
-                {
-                    adding = false;
-                }
-            }
+                        {
+                            //Create the new Student Object
+                            var newStudent = new Student();
+                            //get the student number
+                            var number = studentCount + 1;
+                            // Ask the Questions and Gather Answers here
+                            var name = AskQuestion("What the student name");
+                            newStudent.Name = name;
+                            var birthday = AskQuestion("What is the student date of birth");
+                            newStudent.Birthday = birthday;
+                            var address = AskQuestion("What is the student address");
+                            newStudent.Address = address;
+                            var grade = AskQuestion("What is the student grade");
+                            newStudent.Grade = Convert.ToInt32(grade);
+                            //Insert the student into the student list
+                            students.Add(newStudent);
+                            
+                            Console.WriteLine("Add More Students? y for yes and n for no");
+                            var addMore = Console.ReadLine().ToUpper();
+                            if (addMore != "Y")
+                            {
+                                adding = false;
+                            }
+                        }
+            Console.WriteLine("done");
             
 
             //Get the number of Students
@@ -146,6 +164,7 @@ namespace HelloWorld
         public string Birthday;
         public string Address;
         public int Phone;
+        public int Number;
 
     }
 }

@@ -1,13 +1,13 @@
 ﻿{
   "version": "1.0.0",
   "restore": {
-    "projectUniqueName": "/Users/donovanmurphy/RiderProjects/chsarp-practice/HelloWorld/HelloWorld.csproj",
+    "projectUniqueName": "C:\\Users\\dmurphy\\RiderProjects\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
     "projectName": "HelloWorld",
-    "projectPath": "/Users/donovanmurphy/RiderProjects/chsarp-practice/HelloWorld/HelloWorld.csproj",
-    "outputPath": "/Users/donovanmurphy/RiderProjects/chsarp-practice/HelloWorld/obj/",
+    "projectPath": "C:\\Users\\dmurphy\\RiderProjects\\HelloWorld\\HelloWorld\\HelloWorld.csproj",
+    "outputPath": "C:\\Users\\dmurphy\\RiderProjects\\HelloWorld\\HelloWorld\\obj\\",
     "projectStyle": "PackageReference",
     "fallbackFolders": [
-      "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
     ],
     "originalTargetFrameworks": [
       "netcoreapp2.0"
